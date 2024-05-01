@@ -1,0 +1,160 @@
+/* resets at top */
+body,
+ul,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* styles */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #f9fafc;
+}
+
+h1 {
+  font-size: 100%;
+  font-weight: 700;
+}
+
+/* css specificity takes priority over order listed  */
+.header-nav a {
+  padding: 5px 0;
+  display: block;
+}
+
+a.call-to-action {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  border-radius: 30px;
+  text-align: center;
+}
+
+a {
+  color: #69696a;
+}
+
+main {
+  padding-top: 40px;
+}
+
+.about-us {
+  color: #69696a;
+  border-left: solid 4px #69696a;
+  padding-left: 12px;
+  margin: 15px 0;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(247, 193, 162, 0.7);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* without box-sizing: border-box, padding and borders will be excluded from the dimensions of the element (width: 100%) */
+  box-sizing: border-box;
+}
+
+.footer-nav ul {
+  /* display flex should be applied to the direct parent of the elements you wish to move/align  */
+  display: flex;
+}
+
+.footer-nav a {
+  padding: 5px;
+}
+
+/* always keep your media queries at the bottom of your css file */
+/* "mobile-first" development as best practice */
+/* 1. add new styles only to "desktop" */
+/* 2. replace existing styles from "mobile", only applied to "desktop" */
+@media only screen and (min-width: 768px) {
+  /* adding 100vh to body so that I can vertically center elements on the screen */
+  /* body {
+    height: 100vh;
+    box-sizing: border-box;
+  } */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-nav a {
+    padding: 5px 10px;
+  }
+
+  main {
+    padding: 0;
+    display: flex;
+    height: 100%;
+    padding-top: 100px;
+    /* align-items: center; */
+  }
+  .about-us-container,
+  .circles-container {
+    /* width: 50%; */
+    flex: 1;
+  }
+  .circles-container {
+    position: relative;
+  }
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+  }
+  #circle1 {
+    background-color: rgba(207, 130, 213, 0.6);
+    width: 100px;
+    height: 100px;
+    right: 0;
+    top: 20px;
+    /* the higher the number for z-index, the "closer" it is to you. */
+    z-index: 2;
+  }
+  #circle2 {
+    background-color: rgba(247, 193, 162, 0.7);
+    width: 150px;
+    height: 150px;
+    right: 0;
+    top: 100px;
+    z-index: 3;
+  }
+  #circle3 {
+    background-color: rgba(247, 136, 167, 0.6);
+    width: 200px;
+    height: 200px;
+    right: 50px;
+    z-index: 1;
+  }
+}
+
+/* @media only screen and (min-width: 1200px) {
+  body {
+    background-color: green;
+  }
+} */
